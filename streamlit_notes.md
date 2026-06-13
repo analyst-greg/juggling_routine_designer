@@ -1,0 +1,18 @@
+# From documentation
+- following the documentation at https://docs.streamlit.io/library/get-started/create-an-app 
+- run script with this: python -m streamlit run NAMEHERE.py
+- To stop the Streamlit server, press Ctrl+C in the terminal.
+
+## Data Flow
+
+> Streamlit's architecture allows you to write apps the same way you write plain Python scripts. To unlock this, Streamlit apps have a unique data flow: any time something must be updated on the screen, Streamlit reruns your entire Python script from top to bottom.
+
+> This can happen in two situations:
+
+> 1) Whenever you modify your app's source code.
+
+> 2) Whenever a user interacts with widgets in the app. For example, when dragging a slider, entering text in an input box, or clicking a button.
+
+> Whenever a callback is passed to a widget via the ```on_change``` (or ```on_click```) parameter, the callback will always run before the rest of your script. For details on the Callbacks API, please refer to our [Session State API Reference Guide](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state#use-callbacks-to-update-session-state).
+
+> And to make all of this fast and seamless, Streamlit does some heavy lifting for you behind the scenes. A big player in this story is the @st.cache_data decorator, which allows developers to skip certain costly computations when their apps rerun. We'll cover caching later in this page.
